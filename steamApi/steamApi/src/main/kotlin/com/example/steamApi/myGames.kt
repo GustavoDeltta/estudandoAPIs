@@ -33,4 +33,19 @@ class MyGames{
         allMyGames.add(game)
         return Response("Game Insert Succesfuly")
     }
+    fun deleteMyGameById(id: Any): Response<out Any>{
+        var gameAux = Game(0, "", "")
+        for (game: Game in allMyGames) {
+            if (game.id.toString() == id.toString()) {
+                gameAux = game
+                break
+            }
+        }
+        val result = allMyGames.remove(gameAux)
+        return if (result){
+            Response<String>("Game delete Successfully")
+        }else{
+            Response<String>("Game delete failed")
+        }
+    }
 }
