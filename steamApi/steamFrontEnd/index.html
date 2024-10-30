@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steam</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h2>Steam</h2>
-    <hr/>
-    <div class="allMyGames">
-
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SteamApi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>SteamApi</h2>
+    <div class="insertGame">
+      <span>Inserir novo jogo</span>
+      <button onclick="openModalInsert()">+</button>
     </div>
+    <hr />
+    <dialog>
+      <h3>Inserir novo jogo:</h3>
+      Nome: <input type="text" id="name"/>
+      Capa: <input type="text" id="cover"/>
+      <button onclick="insertGame()">Inserir</button>
+      <button onclick="closeModalInsert()">Cancelar</button>
+    </dialog>
+
+    <div class="allMyGames"></div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
